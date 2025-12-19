@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)file:///C:/Users/Rajeev%20Ranjan/Desktop/webb%20devlopment/girlfriend-surprise.html#photo -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<link href="./Happy Birthday ❤️ final_files/css2" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffdee9, #b5fffc);
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  color: #ff4d6d;
+}
+
+.hero p {
+  margin: 20px 0;
+}
+
+.btn {
+  padding: 12px 30px;
+  background: #ff4d6d;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.photo img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.card {
+  max-width: 700px;
+  margin: auto;
+  background: rgba(255,255,255,0.85);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+video {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 20px;
+}
+
+/* 💖 SIDE LOVE SECTION */
+.love-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.love-section img {
+  width: 320px;
+  border-radius: 20px;
+}
+
+.love-text {
+  max-width: 450px;
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+footer {
+  padding: 40px;
+  background: #ff4d6d;
+  color: white;
+}
+
+/* 🌹 Falling Effects */
+.rose, .heart, .sparkle {
+  position: fixed;
+  top: -50px;
+  pointer-events: none;
+  animation: fall linear forwards;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>Happy Birthday Shagun ❤️</h1>
+  <p>This little page is made only for you</p>
+  <a href="file:///C:/Users/Rajeev%20Ranjan/Desktop/webb%20devlopment/girlfriend-surprise.html#photo" class="btn" id="startSurprise">🎁 Start Surprise</a>
+</section>
+
+<section id="photo" class="photo">
+  <img src="./Happy Birthday ❤️ final_files/1styash.jpeg">
+  <p>The most beautiful part of my world ✨</p>
+</section>
+
+<section>
+  <div class="card">
+    <h2>My Birthday Wish 💌</h2>
+    <p>You make my life brighter just by being in it.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Our Beautiful Memories 📸</h2>
+  <div class="gallery">
+    <img src="./Happy Birthday ❤️ final_files/3rdyash.jpeg">
+    <img src="./Happy Birthday ❤️ final_files/4thyash.jpeg">
+    <img src="./Happy Birthday ❤️ final_files/5thyash.jpeg">
+  </div>
+</section>
+
+<section>
+  <h2>A Message From My Heart 🎥</h2>
+  <video id="loveVideo" controls="">
+    <source src="romantic.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section>
+  <div class="love-section">
+    <img src="./Happy Birthday ❤️ final_files/2ndyash.jpeg">
+    <div class="love-text">
+      <h2>Only You 💖</h2>
+      <p>
+        Loving you is the most beautiful thing I’ve ever done.
+        My heart will always choose you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Forever &amp; Always 💖</h2>
+    <p>I promise to always stand by you.</p>
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ just for you
+</footer>
+
+<!-- 🎂 BIRTHDAY SONG -->
+<audio id="birthdaySong" preload="auto">
+  <source src="happy-birthday.mp3.weba" type="audio/mp3">
+</audio>
+
+<script>
+let started = false;
+const song = document.getElementById("birthdaySong");
+const video = document.getElementById("loveVideo");
+
+/* 🎁 Start Surprise */
+document.getElementById("startSurprise").addEventListener("click", () => {
+  if (started) return;
+  started = true;
+
+  song.volume = 0.8;
+  song.play().catch(()=>{});
+
+  setInterval(() => createEffect("🌹", "rose", 28), 250);
+  setInterval(() => createEffect("💖", "heart", 24), 400);
+  setInterval(() => createEffect("✨", "sparkle", 16), 600);
+});
+
+/* 🎥 VIDEO TIME CROP (29s → 53s) */
+const startTime = 29;
+const endTime = 53;
+
+video.addEventListener("play", () => {
+  song.pause();
+  if (video.currentTime < startTime || video.currentTime >= endTime) {
+    video.currentTime = startTime;
+  }
+});
+
+video.addEventListener("timeupdate", () => {
+  if (video.currentTime >= endTime) {
+    video.pause();
+    video.currentTime = startTime;
+  }
+});
+
+video.addEventListener("pause", () => {
+  song.play().catch(()=>{});
+});
+
+/* 🌹 Effects */
+function createEffect(symbol, className, size) {
+  const el = document.createElement("div");
+  el.className = className;
+  el.innerText = symbol;
+  el.style.left = Math.random() * window.innerWidth + "px";
+  el.style.fontSize = size + "px";
+  el.style.animationDuration = Math.random() * 3 + 5 + "s";
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 9000);
+}
+</script>
+
+
+
+<div class="heart" style="left: 10.3253px; font-size: 24px; animation-duration: 6.83188s;">💖</div><div class="sparkle" style="left: 778.755px; font-size: 16px; animation-duration: 6.95749s;">✨</div><div class="rose" style="left: 122.924px; font-size: 28px; animation-duration: 6.27558s;">🌹</div><div class="rose" style="left: 1389.77px; font-size: 28px; animation-duration: 5.04412s;">🌹</div><div class="heart" style="left: 770.114px; font-size: 24px; animation-duration: 5.91027s;">💖</div><div class="rose" style="left: 848.254px; font-size: 28px; animation-duration: 7.18481s;">🌹</div><div class="sparkle" style="left: 371.386px; font-size: 16px; animation-duration: 6.81569s;">✨</div><div class="heart" style="left: 612.909px; font-size: 24px; animation-duration: 6.93046s;">💖</div><div class="rose" style="left: 1065.81px; font-size: 28px; animation-duration: 7.0281s;">🌹</div><div class="rose" style="left: 1206.18px; font-size: 28px; animation-duration: 7.95368s;">🌹</div><div class="heart" style="left: 251.382px; font-size: 24px; animation-duration: 6.205s;">💖</div><div class="sparkle" style="left: 1060.25px; font-size: 16px; animation-duration: 5.21311s;">✨</div><div class="rose" style="left: 143.522px; font-size: 28px; animation-duration: 5.39896s;">🌹</div><div class="rose" style="left: 1163.68px; font-size: 28px; animation-duration: 5.31456s;">🌹</div><div class="heart" style="left: 707.08px; font-size: 24px; animation-duration: 7.75641s;">💖</div><div class="sparkle" style="left: 572.779px; font-size: 16px; animation-duration: 7.50334s;">✨</div><div class="rose" style="left: 391.836px; font-size: 28px; animation-duration: 5.35181s;">🌹</div><div class="heart" style="left: 1470.92px; font-size: 24px; animation-duration: 6.2693s;">💖</div><div class="rose" style="left: 818.265px; font-size: 28px; animation-duration: 7.30563s;">🌹</div><div class="rose" style="left: 92.7367px; font-size: 28px; animation-duration: 7.72732s;">🌹</div><div class="heart" style="left: 477.105px; font-size: 24px; animation-duration: 7.79341s;">💖</div><div class="sparkle" style="left: 321.957px; font-size: 16px; animation-duration: 6.04289s;">✨</div><div class="rose" style="left: 775.52px; font-size: 28px; animation-duration: 6.51177s;">🌹</div><div class="heart" style="left: 193.965px; font-size: 24px; animation-duration: 6.93381s;">💖</div><div class="rose" style="left: 1374.03px; font-size: 28px; animation-duration: 5.86238s;">🌹</div><div class="sparkle" style="left: 233.792px; font-size: 16px; animation-duration: 6.77367s;">✨</div><div class="rose" style="left: 500.956px; font-size: 28px; animation-duration: 5.56139s;">🌹</div><div class="heart" style="left: 501.665px; font-size: 24px; animation-duration: 5.14596s;">💖</div><div class="rose" style="left: 1329.12px; font-size: 28px; animation-duration: 7.9237s;">🌹</div><div class="rose" style="left: 1158.29px; font-size: 28px; animation-duration: 5.35371s;">🌹</div><div class="heart" style="left: 602.019px; font-size: 24px; animation-duration: 6.03511s;">💖</div><div class="sparkle" style="left: 429.501px; font-size: 16px; animation-duration: 5.24678s;">✨</div><div class="rose" style="left: 386.995px; font-size: 28px; animation-duration: 5.5427s;">🌹</div><div class="heart" style="left: 558.974px; font-size: 24px; animation-duration: 5.83963s;">💖</div><div class="rose" style="left: 949.221px; font-size: 28px; animation-duration: 6.50805s;">🌹</div><div class="sparkle" style="left: 1257.98px; font-size: 16px; animation-duration: 7.8684s;">✨</div><div class="rose" style="left: 22.7972px; font-size: 28px; animation-duration: 6.23947s;">🌹</div><div class="heart" style="left: 1239.48px; font-size: 24px; animation-duration: 5.18384s;">💖</div><div class="rose" style="left: 867.2px; font-size: 28px; animation-duration: 7.63702s;">🌹</div><div class="heart" style="left: 1432.83px; font-size: 24px; animation-duration: 5.80748s;">💖</div><div class="sparkle" style="left: 951.166px; font-size: 16px; animation-duration: 6.39073s;">✨</div><div class="rose" style="left: 1423.06px; font-size: 28px; animation-duration: 6.67515s;">🌹</div><div class="rose" style="left: 901.237px; font-size: 28px; animation-duration: 7.98556s;">🌹</div><div class="heart" style="left: 39.5038px; font-size: 24px; animation-duration: 7.35287s;">💖</div><div class="rose" style="left: 486.143px; font-size: 28px; animation-duration: 7.08213s;">🌹</div><div class="sparkle" style="left: 1256.71px; font-size: 16px; animation-duration: 5.01553s;">✨</div><div class="rose" style="left: 1308.14px; font-size: 28px; animation-duration: 5.88577s;">🌹</div><div class="heart" style="left: 478.201px; font-size: 24px; animation-duration: 7.58227s;">💖</div><div class="rose" style="left: 942.532px; font-size: 28px; animation-duration: 5.75715s;">🌹</div><div class="heart" style="left: 1388.33px; font-size: 24px; animation-duration: 7.94598s;">💖</div><div class="sparkle" style="left: 121.623px; font-size: 16px; animation-duration: 6.08906s;">✨</div><div class="rose" style="left: 428.521px; font-size: 28px; animation-duration: 6.45042s;">🌹</div><div class="rose" style="left: 1270.58px; font-size: 28px; animation-duration: 6.81732s;">🌹</div><div class="heart" style="left: 931.972px; font-size: 24px; animation-duration: 6.75997s;">💖</div><div class="rose" style="left: 1439.68px; font-size: 28px; animation-duration: 7.83695s;">🌹</div><div class="sparkle" style="left: 371.648px; font-size: 16px; animation-duration: 5.50779s;">✨</div><div class="heart" style="left: 4.03108px; font-size: 24px; animation-duration: 7.02426s;">💖</div><div class="rose" style="left: 274.826px; font-size: 28px; animation-duration: 7.97903s;">🌹</div><div class="rose" style="left: 302.873px; font-size: 28px; animation-duration: 5.65131s;">🌹</div><div class="heart" style="left: 110.901px; font-size: 24px; animation-duration: 6.27846s;">💖</div><div class="sparkle" style="left: 1125.19px; font-size: 16px; animation-duration: 6.42824s;">✨</div><div class="rose" style="left: 1520.68px; font-size: 28px; animation-duration: 6.98054s;">🌹</div><div class="rose" style="left: 1129.66px; font-size: 28px; animation-duration: 7.25594s;">🌹</div><div class="heart" style="left: 1300.7px; font-size: 24px; animation-duration: 6.02489s;">💖</div><div class="sparkle" style="left: 1193.23px; font-size: 16px; animation-duration: 6.8438s;">✨</div><div class="rose" style="left: 1037.5px; font-size: 28px; animation-duration: 6.44719s;">🌹</div><div class="heart" style="left: 153.56px; font-size: 24px; animation-duration: 5.20963s;">💖</div><div class="rose" style="left: 724.442px; font-size: 28px; animation-duration: 6.01499s;">🌹</div><div class="rose" style="left: 869.66px; font-size: 28px; animation-duration: 5.57821s;">🌹</div><div class="heart" style="left: 26.7873px; font-size: 24px; animation-duration: 5.02982s;">💖</div><div class="sparkle" style="left: 689.318px; font-size: 16px; animation-duration: 7.62107s;">✨</div><div class="rose" style="left: 441.408px; font-size: 28px; animation-duration: 6.3558s;">🌹</div><div class="heart" style="left: 0.803874px; font-size: 24px; animation-duration: 7.99421s;">💖</div><div class="rose" style="left: 39.772px; font-size: 28px; animation-duration: 5.98905s;">🌹</div></body></html>
